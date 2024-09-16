@@ -15,7 +15,7 @@ class ShipmentController extends Controller
     {
         $shipments = Shipment::query()->paginate(10);
 
-        return view('pages.shipment.index', ['shipments' => $shipments]);
+        return view('pages.shipment.index', compact('shipments'));
     }
 
     public function search(Request $request): View
@@ -82,7 +82,7 @@ class ShipmentController extends Controller
     {
         $shipment = Shipment::find($id);
 
-        return view('pages.shipment.edit', ['shipment' => $shipment]);
+        return view('pages.shipment.edit', compact('shipment'));
     }
 
     public function update(Request $request, string $id): RedirectResponse

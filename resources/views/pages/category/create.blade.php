@@ -11,7 +11,8 @@
                 <label for="description" class="form-label">Description</label>
                 <input type="text" class="form-control" id="description" name="description" placeholder="Smartphone" value="{{ $description ?? '' }}">
             </div>
-            <button type="submit" class="btn btn-primary">Save</button>
+
+            <x-button-save>Save</x-button-save>
         </form>
     </div>
 </x-layout>

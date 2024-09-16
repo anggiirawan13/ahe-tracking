@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout menuName="Dashboard">
     <div class="container mt-5">
         <div class="d-flex justify-content-around">
             <div class="card text-bg-primary mb-3" style="max-width: 18rem;">
@@ -27,7 +27,7 @@
             </div>
             <div class="card text-bg-success mb-3" style="max-width: 18rem;">
                 <div class="card-header">
-                    <h3>Customers</h3>
+                    <h3>Shipments</h3>
                 </div>
                 <div class="card-body d-flex justify-content-center align-items-center">
                     <h1>99</h1>

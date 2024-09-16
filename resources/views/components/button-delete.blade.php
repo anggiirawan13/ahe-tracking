@@ -6,7 +6,7 @@
 
 <script>
     async function destroy(url) {
-        await fetch(`http://127.0.0.1:8000${url}`, {
+        await fetch(window.location.href + url, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',

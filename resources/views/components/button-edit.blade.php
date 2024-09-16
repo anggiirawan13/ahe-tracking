@@ -7,7 +7,7 @@
 
 <script>
     async function getData(url) {
-        const data = await fetch(`http://127.0.0.1:8000${url}`, {
+        const data = await fetch(window.location.hostname + url, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -19,21 +19,5 @@
         const resp = await data.json();
         document.getElementById('name').value = resp.name;
         document.getElementById('description').value = resp.description;
-    }
-
-    async function doUpdate(url) {
-        const payload = {
-            'name': document.getElementById('name').value,
-            'description': document.getElementById('description').value
-        }
-
-        const data = await fetch(`http://127.0.0.1:8000${url}`, {
-            'X-Requested-With': 'XMLHttpRequest',
-            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-            'body': payload
-        })
-
-        const resp = await data.json();
-        console.log(resp);
     }
 </script>

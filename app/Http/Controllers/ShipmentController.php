@@ -13,9 +13,26 @@ class ShipmentController extends Controller
 {
     public function index(): View
     {
-        $shipments = Shipment::all();
+        $shipments = Shipment::query()->paginate(10);
 
         return view('pages.shipment.index', ['shipments' => $shipments]);
+    }
+
+    public function search(Request $request): View
+    {
+        $search = $request->input('search', '');
+
+        $query = Shipment::query();
+
+        if (!empty($search) && is_string($search)) {
+            $query->where('tracking_number', 'like', '%' . $search . '%')
+                ->orWhere('company_name', 'like', '%' . $search . '%')
+                ->orWhere('status', 'like', '%' . $search . '%');
+        }
+
+        $shipments = $query->paginate(10);
+
+        return view('pages.shipment.index', compact('shipments'));
     }
 
     public function getById(string $id): JsonResponse

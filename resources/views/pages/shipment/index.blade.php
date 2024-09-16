@@ -1,7 +1,7 @@
 <x-layout menuName="Shipment">
     <div class="container mt-5">
 
-        <x-navbar-table addUrl="shipment.create"></x-navbar-table>
+        <x-navbar-table routeSearch="shipment.search" routeCreate="shipment.create"></x-navbar-table>
 
         <table class="table table-striped">
             <thead>
@@ -26,15 +26,15 @@
                     <td>{{ $ship->delivery_date }}</td>
                     <td>{{ $ship->status }}</td>
                     <td class="text-center">
-                        <x-button-edit actionUrl="/shipment/{{ $ship->id }}/edit"></x-button-edit>
-                        <x-button-delete actionUrl="/{{ $ship->id }}"></x-button-delete>
+                        <x-button-edit actionUrl="shipment.edit" id="{{ $ship->id }}"></x-button-edit>
+                        <x-button-delete actionUrl="{{ route('shipment.destroy', ['id' => $ship->id]) }}"></x-button-delete>
                     </td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
 
-        <x-pagination></x-pagination>
+        <x-pagination :data="$shipments"></x-pagination>
     </div>
 
 </x-layout>

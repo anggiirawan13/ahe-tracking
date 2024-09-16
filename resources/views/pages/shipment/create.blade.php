@@ -1,11 +1,8 @@
 <x-layout menuName="Create Shipment">
     <div class="container mt-5">
-        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a class="text-decoration-none" href="{{ route('shipment.index') }}">Shipment</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Create</li>
-            </ol>
-        </nav>
+
+        <x-breadcrumb routeName="shipment.index" menuName="Shipment" currentMenu="Create"></x-breadcrumb>
+
         <div class="card">
             <div class="card-body">
                 <form action="{{ route('shipment.store') }}" method="POST">

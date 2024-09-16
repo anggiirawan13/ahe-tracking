@@ -4,7 +4,7 @@
 
 <script>
     async function destroy(url) {
-        await fetch(window.location.href + url, {
+        await fetch(url, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',

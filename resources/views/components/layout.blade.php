@@ -8,9 +8,9 @@
             </div>
 
             <div class="d-flex align-items-center justify-content-end pe-2">
-                <span class="text-bg-dark pe-2">Anugrah Hadi Electric</span>
+                <span class="text-bg-dark pe-2 fw-bold">Anugrah Hadi Electric</span>
 
-                <img src="{{asset('LOGO_SMALL.jpg') }}" alt="Logo AHE" style="width: 3%;" />
+                <img src="{{asset('LOGO_SMALL.jpg') }}" alt="Logo AHE" style="width: 4%;" />
             </div>
         </nav>
 

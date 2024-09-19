@@ -6,17 +6,17 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class pagination extends Component
+class Pagination extends Component
 {
     /**
      * Create a new component instance.
      */
 
-    public $data;
+    public $paginator;
 
-    public function __construct($data)
+    public function __construct($paginator)
     {
-        $this->data = $data;
+        $this->paginator = $paginator;
     }
 
     /**

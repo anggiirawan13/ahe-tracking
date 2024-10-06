@@ -34,7 +34,7 @@
             </tbody>
         </table>
 
-        <x-pagination :data="$shipments"></x-pagination>
+        <x-pagination :paginator="$shipments"></x-pagination>
     </div>
 
 </x-layout>
